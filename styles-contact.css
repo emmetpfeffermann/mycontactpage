@@ -1,0 +1,281 @@
+/*This is my 201 Contact Web Page Project using Eric Meyer's reset at the top of my page -- your CSS starts on line 56 */
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	overflow-x: clip;
+	scroll-behavior: smooth;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* ---------- This is the beginning of my 201 Contact Web Page Project ------------ */
+
+html, body {
+	height: 100%;
+}
+
+.upper {
+	/* aligning content */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* setting background image to fill entire screen */
+	height: 100%;
+	background-image: url("images/contact-bg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom;
+}
+
+.lower {
+	/* positioning content in lower section to the right of the screen */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	height: 89.5%; /* ensures the logo isnt covered when scrolled down */
+	width: 100%;
+ 	background: rgba(255, 182, 182);
+	padding: 0 20px 0 20px;
+}
+
+/* fades logo in on page load */
+@keyframes fadeIn {
+	0% { 
+		opacity: 0;
+		width: 50%;
+	}
+	100% { opacity: 1; }
+}
+   
+#logo {
+	animation: fadeIn 5s; /* utilized the above keyframe with a 5s transition */
+	
+	/* makes the logo stick to the top when scrolled down */
+	position: sticky;
+	top: 0;
+
+	max-width: 500px; /* stops the logo from getting bigger than 500px */
+}
+
+.text {
+	/* sets the text to the middle right of the screen */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.text > * {
+	/* puts 50px of padding around all children of .text */
+	padding: 50px;
+}
+
+h1 {
+	/* FONT-FAMILY GOES HERE CHOOSE FROM TYPEKIT OR GOOGLE FONTS */
+	font-family: input-serif, serif;
+	font-weight: 700;
+	font-style: ExtraBold;
+	font-size: 2em;
+    color: #fff;
+}
+
+h2 {
+	 /* FONT-FAMILY GOES HERE CHOOSE FROM TYPEKIT OR GOOGLE FONTS */
+	font-family: input-serif, serif;
+	font-weight: 500;
+	font-style: bold;
+	font-size: 1.5em;
+    color: #fff;
+}
+
+p {
+	/* FONT-FAMILY GOES HERE CHOOSE FROM TYPEKIT OR GOOGLE FONTS */
+	font-family: input-serif, serif;
+	font-weight: 100;
+	font-style: normal;
+	font-size: 1.2em;
+    color: #fff;
+}
+
+.left-arrow {
+	display: flex;
+	align-items: center;
+
+	visibility: hidden; /* hidden by default, shown with the below media query of 1000px or more */
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 20px solid rgb(255, 72, 72);
+    border-bottom: 50px solid transparent;
+}
+
+#menu-icon {
+	position: absolute;
+	margin-left: 2px;
+	width: 25px;
+}
+
+.down-arrow {
+	border: solid rgb(255, 72, 72);
+	border-width: 0 3px 3px 0;
+	border-radius: 10%;
+	display: inline-block;
+	position: absolute;
+	padding: 3px;
+	
+	/* puts the down arrow below the logo */
+	top: 80%;
+	left: 50%;
+
+	transform: rotate(45deg) scale(500%); /* makes the arrow bigger and point downwards */
+	cursor: pointer; /* turns cursor to pointer on hover*/
+}
+
+nav{
+	/* centers all elements in the nav */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: input-serif, serif;
+	font-weight: 100;
+	
+	height: 100%;
+	width: 5%; /* This is the width of the nav element */
+	background-color: rgb(255, 72, 72);
+
+	/* sets the transition time for the hover effects */
+	transition: .5s;
+}
+
+@media (min-width: 1000px) {
+	/* makes the left arrow only show when the screen is over 1000px */
+	/* this allows the nav to be on the bottom when the screen is <1000px */
+	.left-arrow {
+		visibility: visible;
+	}
+
+	/* creates the slide out menu on hover */
+	/* first sets opacity to 0 to hide icons */
+	nav > ul > li > a {
+		opacity: 0;
+	}
+	/* next sets the nav size to 20% in order to create the slide aniimation */
+	nav:hover {
+		width: 20%;
+	}
+	/* then the link elements are slowly increased in opacity */
+	nav:hover a {
+		transition: 1.5s;
+		opacity: 100%;
+	}
+}
+
+nav ul {
+	display: flex;
+	position: absolute;
+	flex-direction: column; /* sets the elements within the nav to stack vertically */
+}
+
+nav li{
+	padding: 20px; /* gives space between the nav elements */
+	list-style: none;
+}
+
+ul li a {
+	width: 80px;
+	height: 80px;
+	background-color: #fff;
+	color: rgb(86, 0, 0);
+	text-align: center;
+	line-height: 80px;
+	font-size: .7em;
+	display: block;
+	border-radius: 50%;  /* makes the nav elements circles */
+	position: relative;
+	overflow: hidden;
+	border: 3px solid #fff;
+	text-decoration: none;
+	transition: .5s; /* transition speed for hover effect */
+}
+
+/* changes nav elements to red on hover */
+/* changes nav element text to white on hover */
+ul li a:hover {
+	background-color: rgb(255, 72, 72);
+	color: white;
+}
+
+/* adjustments when screen size is <1000px */
+@media (max-width: 1000px){
+	/* centers the text rather than aligning to the right */
+	.text {
+		align-items: center;
+	}
+	/* changes all elements in the lower section to stack vertically rather than horizontally */
+	.lower {
+		flex-direction: column;
+		text-align: center;
+		padding: 0;
+	}
+	/* makes the nav span the entire screen width */
+	nav {
+		width: 100%;
+		height: 20%;
+	}
+	/* sets the nav elements to sit next to eachother horizontally rather than vertically */
+	nav ul {
+		flex-direction: row;
+	}
+}
+

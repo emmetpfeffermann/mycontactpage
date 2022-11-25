@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="styles-contact.css">
+<link rel="stylesheet" href="https://use.typekit.net/wri2acz.css">
+<meta charset=”UTF-8”>
+<script>
+    // JavaScript to allow 'onClick' for down arrow to scroll to bottom
+    const toBottom = () => {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+</script>
+<!-- THE TITLE WILL APPEAR IN THE BROWSER WINDOW OR TAB -->
+<title>Emmet Pfeffermann | Contact Page</title>
+
+</head>
+
+    <body>
+        <a id="downArrow" onClick="toBottom()" class="down-arrow"></a> <!-- uses 'toBottom' script from above to allow 'onClick' to scroll to bottom -->
+
+        <div class="upper">
+            <img id="logo" src="images/logo@2x.png" alt="Emmet Pfeffermann Logo">
+        </div>
+
+        <div class="lower">
+            
+            <div class="text">
+                <h1>This is my contact page</h1>
+                <h2>for GrC 201</h2>
+                <p>This site has links for behance, LinkedIn, and my email</p>
+            </div>
+
+            <div class="left-arrow">
+                <img id="menu-icon" src="images/menu-icon.png" alt="Menu Icon">
+            </div> <!-- arrow attached to nav when screen is >1000px -->
+            
+
+            <nav> 
+                <ul>
+                    <li><a href="https://www.behance.net" target="_blank">My Work</a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="mailto:erpfeffe@calpoly.edu">Email</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </body>
+
+</html>
