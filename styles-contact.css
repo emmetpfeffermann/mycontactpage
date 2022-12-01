@@ -82,10 +82,10 @@ html, body {
 	align-items: center;
 	justify-content: flex-end;
 
-	height: 89.5%; /* ensures the logo isnt covered when scrolled down */
+	height: 90%; /* ensures the logo isnt covered when scrolled down */
 	width: 100%;
- 	background: rgba(255, 182, 182);
-	padding: 0 20px 0 20px;
+ 	background: rgb(255, 181, 154);
+	padding: 0 20px;
 }
 
 /* fades logo in on page load */
@@ -104,15 +104,14 @@ html, body {
 	position: sticky;
 	top: 0;
 
-	max-width: 500px; /* stops the logo from getting bigger than 500px */
+	max-height: 10%; /* stops the logo from getting bigger than 500px */
 }
 
 .text {
 	/* sets the text to the middle right of the screen */
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	justify-content: center;
+	margin-left: auto;
+	text-align: right;
+	margin-bottom: 1%; /* adjusts text to be more accurately centered */
 }
 
 .text > * {
@@ -261,15 +260,16 @@ ul li a:hover {
 	/* centers the text rather than aligning to the right */
 	.text {
 		align-items: center;
+		margin-top: auto; /* makes text centered */
 	}
 	/* changes all elements in the lower section to stack vertically rather than horizontally */
 	.lower {
 		flex-direction: column;
-		text-align: center;
 		padding: 0;
 	}
 	/* makes the nav span the entire screen width */
 	nav {
+		margin-top: auto; /* forces nav to bottom */
 		width: 100%;
 		height: 20%;
 	}
