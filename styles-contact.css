@@ -82,10 +82,13 @@ html, body {
 	align-items: center;
 	justify-content: flex-end;
 
+	position: absolute;
+	
+
 	height: 90%; /* ensures the logo isnt covered when scrolled down */
 	width: 100%;
  	background: rgb(255, 181, 154);
-	padding: 0 20px;
+	padding: 0 20px; /* 20px of padding on left and right */
 }
 
 /* fades logo in on page load */
@@ -146,18 +149,6 @@ p {
     color: #fff;
 }
 
-.left-arrow {
-	display: flex;
-	align-items: center;
-
-	visibility: hidden; /* hidden by default, shown with the below media query of 1000px or more */
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-right: 20px solid rgb(255, 72, 72);
-    border-bottom: 50px solid transparent;
-}
-
 #menu-icon {
 	position: absolute;
 	margin-left: 2px;
@@ -180,7 +171,7 @@ p {
 	cursor: pointer; /* turns cursor to pointer on hover*/
 }
 
-nav{
+nav {
 	/* centers all elements in the nav */
 	display: flex;
 	justify-content: center;
@@ -190,34 +181,11 @@ nav{
 	font-weight: 100;
 	
 	height: 100%;
-	width: 5%; /* This is the width of the nav element */
+	width: 15%; /* This is the width of the nav element */
 	background-color: rgb(255, 72, 72);
 
 	/* sets the transition time for the hover effects */
 	transition: .5s;
-}
-
-@media (min-width: 1000px) {
-	/* makes the left arrow only show when the screen is over 1000px */
-	/* this allows the nav to be on the bottom when the screen is <1000px */
-	.left-arrow {
-		visibility: visible;
-	}
-
-	/* creates the slide out menu on hover */
-	/* first sets opacity to 0 to hide icons */
-	nav > ul > li > a {
-		opacity: 0;
-	}
-	/* next sets the nav size to 20% in order to create the slide aniimation */
-	nav:hover {
-		width: 20%;
-	}
-	/* then the link elements are slowly increased in opacity */
-	nav:hover a {
-		transition: 1.5s;
-		opacity: 100%;
-	}
 }
 
 nav ul {
@@ -232,12 +200,12 @@ nav li{
 }
 
 ul li a {
-	width: 80px;
-	height: 80px;
+	width: 8em;
+	height: 8em;
 	background-color: #fff;
 	color: rgb(86, 0, 0);
 	text-align: center;
-	line-height: 80px;
+	line-height: 8em; /* centers text in the circles since diameter is 8em */
 	font-size: .7em;
 	display: block;
 	border-radius: 50%;  /* makes the nav elements circles */
@@ -256,11 +224,12 @@ ul li a:hover {
 }
 
 /* adjustments when screen size is <1000px */
-@media (max-width: 1000px){
+@media (max-width: 1100px){
 	/* centers the text rather than aligning to the right */
 	.text {
 		text-align: center;
-		margin-top: auto; /* makes text centered */
+		margin-top: auto; /* makes text centered vertically */
+		margin-right: auto; /* makes text centered horizontally */
 	}
 	/* changes all elements in the lower section to stack vertically rather than horizontally */
 	.lower {
